@@ -26,8 +26,19 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapsVectorPixel" translatesAutoresizingMaskIntoConstraints="NO" id="peS-dy-AO5">
+                                        <rect key="frame" x="36" y="91.666666666666686" width="342" height="185"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="342" id="00g-bl-BVa"/>
+                                            <constraint firstAttribute="height" constant="185" id="Nd8-nX-YLn"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="peS-dy-AO5" firstAttribute="centerY" secondItem="YjF-6i-dB7" secondAttribute="centerY" id="U8W-XJ-Jya"/>
+                                    <constraint firstItem="peS-dy-AO5" firstAttribute="centerX" secondItem="YjF-6i-dB7" secondAttribute="centerX" id="x6J-fp-tEO"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opt-Qk-DJ6">
                                 <rect key="frame" x="0.0" y="368" width="414" height="368"/>
@@ -65,10 +76,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="131.78410794602701"/>
+            <point key="canvasLocation" x="131.25" y="131.25"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="515" height="669"/>
+        <image name="mapsVectorPixel" width="669" height="333"/>
     </resources>
 </document>
