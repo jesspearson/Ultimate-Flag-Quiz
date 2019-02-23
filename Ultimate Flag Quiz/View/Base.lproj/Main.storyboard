@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="Launch Screen View Controller" customClass="ViewController" customModule="Ultimate_Flag_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="thx-3p-g2b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YjF-6i-dB7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="FFZ-VE-9l7">
+                                        <rect key="frame" x="-69.666666666666686" y="-139.66666666666666" width="515.33333333333337" height="669.33333333333337"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opt-Qk-DJ6">
+                                <rect key="frame" x="0.0" y="368" width="414" height="368"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkR-oO-7JD">
+                                        <rect key="frame" x="117.66666666666669" y="161.66666666666663" width="180" height="45"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
+                                        <state key="normal" title="   Start Game ⚐  ">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gkR-oO-7JD" firstAttribute="centerY" secondItem="opt-Qk-DJ6" secondAttribute="centerY" id="L2A-bQ-rWC"/>
+                                    <constraint firstItem="gkR-oO-7JD" firstAttribute="centerX" secondItem="opt-Qk-DJ6" secondAttribute="centerX" id="L47-y6-xga"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="opt-Qk-DJ6" firstAttribute="width" secondItem="YjF-6i-dB7" secondAttribute="width" id="ACm-wb-DCX"/>
+                            <constraint firstItem="YjF-6i-dB7" firstAttribute="leading" secondItem="5ZH-rd-LgH" secondAttribute="leading" id="EzO-Xf-rrA"/>
+                            <constraint firstItem="opt-Qk-DJ6" firstAttribute="leading" secondItem="5ZH-rd-LgH" secondAttribute="leading" id="HJX-Nj-3TV"/>
+                            <constraint firstItem="YjF-6i-dB7" firstAttribute="trailing" secondItem="5ZH-rd-LgH" secondAttribute="trailing" id="KIz-Ei-jMl"/>
+                            <constraint firstItem="opt-Qk-DJ6" firstAttribute="trailing" secondItem="5ZH-rd-LgH" secondAttribute="trailing" id="KMj-vn-Vlj"/>
+                            <constraint firstItem="opt-Qk-DJ6" firstAttribute="bottom" secondItem="5ZH-rd-LgH" secondAttribute="bottom" id="LVL-Kw-g9J"/>
+                            <constraint firstItem="opt-Qk-DJ6" firstAttribute="height" secondItem="YjF-6i-dB7" secondAttribute="height" id="M5J-hi-AaN"/>
+                            <constraint firstItem="YjF-6i-dB7" firstAttribute="top" secondItem="thx-3p-g2b" secondAttribute="top" id="ZOg-E3-pl5"/>
+                            <constraint firstItem="opt-Qk-DJ6" firstAttribute="top" secondItem="YjF-6i-dB7" secondAttribute="bottom" id="apj-ug-IX6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5ZH-rd-LgH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="131.78410794602701"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="515" height="669"/>
+    </resources>
+</document>
