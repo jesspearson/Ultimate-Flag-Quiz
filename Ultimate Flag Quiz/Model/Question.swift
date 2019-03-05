@@ -12,11 +12,11 @@ class Question {
     
     let flagImage : String
     let answer: String
-    let multipleChoiceOptions : String
+    let options : Array<String>
     
-    init(image: String, correctAnswer: String, otherOptions: String) {
-        flagImage = image
+    init(imageURI: String, correctAnswer: String, otherOptions: Array<String>) {
+        flagImage = imageURI
         answer = correctAnswer
-        multipleChoiceOptions = otherOptions
+        options = otherOptions
     }
 }

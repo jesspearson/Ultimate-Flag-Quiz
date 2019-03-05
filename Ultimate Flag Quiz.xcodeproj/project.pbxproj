@@ -14,7 +14,6 @@
 		943C98762220358400E08868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943C98742220358400E08868 /* LaunchScreen.storyboard */; };
 		943C98832222E2B300E08868 /* StandardGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C98822222E2B300E08868 /* StandardGameViewController.swift */; };
 		947894CB2225C30D00181AE2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947894CA2225C30D00181AE2 /* Question.swift */; };
-		947894CD2225C45400181AE2 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947894CC2225C45400181AE2 /* QuestionBank.swift */; };
 		947894CF2225CBC500181AE2 /* testJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 947894CE2225CBC500181AE2 /* testJson.json */; };
 		E55AC0345D5E333CA8DAC40C /* Pods_Ultimate_Flag_Quiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5A16925570D0E716900839 /* Pods_Ultimate_Flag_Quiz.framework */; };
 /* End PBXBuildFile section */
@@ -32,7 +31,6 @@
 		943C98772220358400E08868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		943C98822222E2B300E08868 /* StandardGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardGameViewController.swift; sourceTree = "<group>"; };
 		947894CA2225C30D00181AE2 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		947894CC2225C45400181AE2 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
 		947894CE2225CBC500181AE2 /* testJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testJson.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 /* End PBXFileReference section */
 
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				947894CA2225C30D00181AE2 /* Question.swift */,
-				947894CC2225C45400181AE2 /* QuestionBank.swift */,
 				947894CE2225CBC500181AE2 /* testJson.json */,
 			);
 			path = Model;
@@ -199,16 +196,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Ultimate Flag Quiz/Pods-Ultimate Flag Quiz-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -223,15 +216,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Ultimate Flag Quiz-checkManifestLockResult.txt",
 			);
@@ -250,7 +239,6 @@
 				943C986E2220358200E08868 /* LaunchScreenViewController.swift in Sources */,
 				947894CB2225C30D00181AE2 /* Question.swift in Sources */,
 				943C986C2220358200E08868 /* AppDelegate.swift in Sources */,
-				947894CD2225C45400181AE2 /* QuestionBank.swift in Sources */,
 				943C98832222E2B300E08868 /* StandardGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
