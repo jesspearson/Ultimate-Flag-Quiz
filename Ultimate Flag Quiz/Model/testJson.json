@@ -3,28 +3,28 @@
     "flags" : [
                {
                "countryName" : "France",
-               "flagUri": "Assets.xcassets/flags/europe/europe/france.imageset/france.png",
+               "flagUri": "france.png",
                "continent": "Europe",
                "level": 1,
                "altCountries": [
-                                "Netherlands", "Paraguay", "United Kingdom", "Tuvalu", "Cook Islands"
+                                "Netherlands", "Paraguay", "United Kingdom",
                                 ]
                },
                {
                "countryName" : "Germany",
-               "flagUri": "Assets.xcassets/flags/europe/europe/germany.imageset/germany.png",
+               "flagUri": "germany.png",
                "continent": "Europe",
                "level": 1,
                "altCountries": [
-                                "New Zealand", "United Kingdom", "Tuvalu", "Fiji", "Cook Islands"
+                                "Belgium", "United Kingdom", "Tuvalu",
                                 ]
                },
                {
                "countryName" : "Italy",
-               "flagUri": "Assets.xcassets/flags/europe/europe/italy.imageset/italy.png",
+               "flagUri": "italy.png",
                "continent": "Australasia",
                "altCountries": [
-                                "Marshall Islands", "Solomon Islands", "Maldives", "St Kitts and Nevis", "Fiji"
+                                "Marshall Islands", "Solomon Islands", "Maldives",
                                 ]
                }
                ]
