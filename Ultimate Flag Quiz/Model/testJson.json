@@ -1,31 +1,37 @@
 {
-    "version" : 1.0,
-    "flags" : [
-               {
-               "countryName" : "France",
-               "flagUri": "france.png",
-               "continent": "Europe",
-               "level": 1,
-               "altCountries": [
-                                "Netherlands", "Paraguay", "United Kingdom",
-                                ]
-               },
-               {
-               "countryName" : "Germany",
-               "flagUri": "germany.png",
-               "continent": "Europe",
-               "level": 1,
-               "altCountries": [
-                                "Belgium", "United Kingdom", "Tuvalu",
-                                ]
-               },
-               {
-               "countryName" : "Italy",
-               "flagUri": "italy.png",
-               "continent": "Australasia",
-               "altCountries": [
-                                "Marshall Islands", "Solomon Islands", "Maldives",
-                                ]
-               }
-               ]
+  "version": 1,
+  "flags": [
+    {
+      "countryName": "France",
+      "flagUri": "france.png",
+      "continent": "Europe",
+      "level": 1,
+      "altCountries": [
+        "Netherlands",
+        "Paraguay",
+        "United Kingdom"
+      ]
+    },
+    {
+      "countryName": "Germany",
+      "flagUri": "germany.png",
+      "continent": "Europe",
+      "level": 1,
+      "altCountries": [
+        "Belgium",
+        "United Kingdom",
+        "Tuvalu"
+      ]
+    },
+    {
+      "countryName": "Italy",
+      "flagUri": "italy.png",
+      "continent": "Australasia",
+      "altCountries": [
+        "Marshall Islands",
+        "Solomon Islands",
+        "Maldives"
+      ]
+    }
+  ]
 }

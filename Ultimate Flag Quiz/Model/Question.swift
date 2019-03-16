@@ -19,4 +19,10 @@ class Question {
         answer = correctAnswer
         options = otherOptions
     }
+    
+    init() {
+        flagImage = ""
+        answer = ""
+        options = []
+    }
 }

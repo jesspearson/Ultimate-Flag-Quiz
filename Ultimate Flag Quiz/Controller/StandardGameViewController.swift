@@ -12,6 +12,9 @@ import SwiftyJSON
 
 class StandardGameViewController: UIViewController {
 
+    var arrayFlagObjects = [Question]()
+    var randomiseFlags : Int = 0
+    var question = Question()
     
     @IBOutlet weak var flagImage: UIImageView!
     
@@ -23,18 +26,16 @@ class StandardGameViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         
+        let answer = sender.titleLabel!.text
+        answerPressed(playerAnswer: answer!, correctAnswer: question)
         
     }
-    
-    //flag array that will store all question objects
-    var arrayFlagObjects = [Question]()
-    var randomiseFlags : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         parseJSON()
         shuffleArray()
-        getQuestion(randomiseInt: randomiseFlags)
+        question = getQuestion(randomiseInt: randomiseFlags)
 
     
 
@@ -74,7 +75,7 @@ class StandardGameViewController: UIViewController {
                     }
                     
                     //create Question object passing vars above as arguments
-                    var questions = Question(imageURI: pathName, correctAnswer: countryName, otherOptions: otherOptions )
+                    let questions = Question(imageURI: pathName, correctAnswer: countryName, otherOptions: otherOptions )
                     
                     //add question object to array of flag objects
                     arrayFlagObjects.append(questions)
@@ -95,29 +96,26 @@ class StandardGameViewController: UIViewController {
     }
     
     // MARK - shuffle array or does swift already have a method I can use for this?
-    //This method will shuffle the completed array to randomise the order of the flags
+    //This method will count the completed array and then select a random number from the array which can be used to pick out a random set of flag data
     func shuffleArray() {
         randomiseFlags = Int(arc4random_uniform(UInt32(arrayFlagObjects.count)))
     }
     
-    func getQuestion(randomiseInt : Int) {
+    func getQuestion(randomiseInt : Int) -> Question {
+        var randomQuestion = Question()
+        
         //get question using if e.e if array not empty then {get a random array element and display updat the UI} else end of the game
-        if arrayFlagObjects.count != 0 {
+        if !arrayFlagObjects.isEmpty {
             
             //get random array element & store in local var and remove from overall arrayFlagObjcts array
-            let randomisedArray = arrayFlagObjects.remove(at: randomiseInt)
+            randomQuestion = arrayFlagObjects.remove(at: randomiseInt)
             
             
             //update images, question buttons with that arrays data
-            updateUI(answerOptions: randomisedArray.options, correctAnswer: randomisedArray.answer, flagImagePath: randomisedArray.flagImage)
-            
-            //call answerPressed method here to perform that logic
-            
-            
-            
+            updateUI(answerOptions: randomQuestion.options, correctAnswer: randomQuestion.answer, flagImagePath: randomQuestion.flagImage)
             
         }
-        
+        return randomQuestion
     }
     
     
@@ -149,7 +147,22 @@ class StandardGameViewController: UIViewController {
     
     
     // MARK - create answerPressed() method here
-    
+    //takes in the title label text for the button the user has pressed as the 'playerAnswer', and also takes in the question object answer vaue.
+    // compares them 
+    func answerPressed(playerAnswer : String, correctAnswer : Question) {
+        let answer = playerAnswer
+        let correctAnswer = correctAnswer.answer
+        
+        if answer == correctAnswer {
+            // add code here to change button colour to green if correct
+            // also need to add a counter at some point to keep track of score
+           print("you got it right")
+        } else {
+            // add code to change button colour to red if wrong
+            // if I want to have 3 lives then this would also need to remove a "life"
+            print("Wrong")
+        }
+    }
 }
     
     
