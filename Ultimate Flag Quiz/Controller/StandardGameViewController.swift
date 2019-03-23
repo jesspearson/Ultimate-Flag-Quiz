@@ -15,6 +15,7 @@ class StandardGameViewController: UIViewController {
     var arrayFlagObjects = [Question]()
     var randomiseFlags : Int = 0
     var question = Question()
+    var checkedAnswer = ""
     
     @IBOutlet weak var flagImage: UIImageView!
     
@@ -27,8 +28,21 @@ class StandardGameViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         
         let answer = sender.titleLabel!.text
-        answerPressed(playerAnswer: answer!, correctAnswer: question)
         
+        checkedAnswer = answerPressed(playerAnswer: answer!, correctAnswer: question)
+        if checkedAnswer == "Correct" {
+            UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.green},
+                           completion: { _ in UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.black})
+            })
+            //gets next question object and displays it
+            shuffleArray()
+            question = getQuestion(randomiseInt: randomiseFlags)
+        }
+        else  {
+            UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.red},
+                           completion: { _ in UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.black})
+            })
+        }
     }
     
     override func viewDidLoad() {
@@ -36,9 +50,6 @@ class StandardGameViewController: UIViewController {
         parseJSON()
         shuffleArray()
         question = getQuestion(randomiseInt: randomiseFlags)
-
-    
-
         // Do any additional setup after loading the view.
     }
 
@@ -104,7 +115,7 @@ class StandardGameViewController: UIViewController {
     func getQuestion(randomiseInt : Int) -> Question {
         var randomQuestion = Question()
         
-        //get question using if e.e if array not empty then {get a random array element and display updat the UI} else end of the game
+        //get question using if e.g if array not empty then {get a random array element and display updat the UI} else end of the game
         if !arrayFlagObjects.isEmpty {
             
             //get random array element & store in local var and remove from overall arrayFlagObjcts array
@@ -115,6 +126,7 @@ class StandardGameViewController: UIViewController {
             updateUI(answerOptions: randomQuestion.options, correctAnswer: randomQuestion.answer, flagImagePath: randomQuestion.flagImage)
             
         }
+        print(arrayFlagObjects.count)
         return randomQuestion
     }
     
@@ -147,22 +159,31 @@ class StandardGameViewController: UIViewController {
     
     
     // MARK - create answerPressed() method here
-    //takes in the title label text for the button the user has pressed as the 'playerAnswer', and also takes in the question object answer vaue.
-    // compares them 
-    func answerPressed(playerAnswer : String, correctAnswer : Question) {
+    //takes in the title label text for the button the user has pressed as the 'playerAnswer', and also takes in the question object answer value.
+    // compares them and returns a string confirming if the answer is correct or incorrect
+    func answerPressed(playerAnswer : String, correctAnswer : Question) -> String {
         let answer = playerAnswer
         let correctAnswer = correctAnswer.answer
+        var checkedAnswer = ""
         
         if answer == correctAnswer {
-            // add code here to change button colour to green if correct
+            print("you got it right")
+            checkedAnswer = "Correct"
+            
+            
             // also need to add a counter at some point to keep track of score
-           print("you got it right")
+           
         } else {
-            // add code to change button colour to red if wrong
+            
             // if I want to have 3 lives then this would also need to remove a "life"
             print("Wrong")
+            checkedAnswer = "Incorrect"
         }
+        return checkedAnswer
     }
+    
+    
+    
 }
     
     
