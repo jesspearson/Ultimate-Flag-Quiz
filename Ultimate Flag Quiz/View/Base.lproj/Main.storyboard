@@ -27,7 +27,7 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapsVectorPixel" translatesAutoresizingMaskIntoConstraints="NO" id="peS-dy-AO5">
-                                        <rect key="frame" x="36" y="91.666666666666686" width="342" height="185"/>
+                                        <rect key="frame" x="36" y="92" width="342" height="185"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="342" id="00g-bl-BVa"/>
                                             <constraint firstAttribute="height" constant="185" id="Nd8-nX-YLn"/>
@@ -44,7 +44,7 @@
                                 <rect key="frame" x="0.0" y="368" width="414" height="368"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkR-oO-7JD">
-                                        <rect key="frame" x="117" y="161.66666666666663" width="180" height="45"/>
+                                        <rect key="frame" x="117" y="162" width="180" height="45"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="23"/>
                                         <state key="normal" title="   Start Game ⚐  ">
@@ -191,17 +191,15 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="260-united-kingdom" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-VJ-W3c">
                                         <rect key="frame" x="50" y="90" width="314" height="268"/>
                                     </imageView>
-                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMN-Eh-AVV">
+                                    <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMN-Eh-AVV">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem id="XPP-IR-sdX"/>
                                         </items>
                                     </navigationBar>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ebf-Qa-M8G">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ebf-Qa-M8G">
                                         <rect key="frame" x="343" y="52" width="63" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="⚐" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTO-LN-TiE">
                                                 <rect key="frame" x="0.0" y="0.0" width="21" height="22"/>
@@ -226,9 +224,8 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQb-Rn-Rqb">
-                                        <rect key="frame" x="0.0" y="44" width="75" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQb-Rn-Rqb">
+                                        <rect key="frame" x="8" y="44" width="75" height="28"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z8t-Bn-KhL">
                                                 <rect key="frame" x="0.0" y="0.0" width="19" height="28"/>
@@ -256,11 +253,15 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="SQb-Rn-Rqb" firstAttribute="top" secondItem="IMN-Eh-AVV" secondAttribute="bottom" constant="8" id="57N-zg-npM"/>
                                     <constraint firstAttribute="trailing" secondItem="Owh-VJ-W3c" secondAttribute="trailing" constant="50" id="9tc-Gs-E0o"/>
+                                    <constraint firstItem="SQb-Rn-Rqb" firstAttribute="leading" secondItem="I78-LU-U8S" secondAttribute="leading" constant="8" id="B0n-sI-abP"/>
                                     <constraint firstItem="Owh-VJ-W3c" firstAttribute="leading" secondItem="I78-LU-U8S" secondAttribute="leading" constant="50" id="Dgt-5I-wDW"/>
+                                    <constraint firstItem="Ebf-Qa-M8G" firstAttribute="top" secondItem="IMN-Eh-AVV" secondAttribute="bottom" constant="8" id="Nzi-ct-Vbn"/>
                                     <constraint firstItem="Owh-VJ-W3c" firstAttribute="top" secondItem="I78-LU-U8S" secondAttribute="top" constant="90" id="dBK-wD-OAI"/>
                                     <constraint firstItem="Owh-VJ-W3c" firstAttribute="centerX" secondItem="I78-LU-U8S" secondAttribute="centerX" id="dBT-ln-eli"/>
                                     <constraint firstAttribute="bottom" secondItem="Owh-VJ-W3c" secondAttribute="bottom" constant="10" id="mME-PH-tg3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ebf-Qa-M8G" secondAttribute="trailing" constant="8" id="oIz-6z-J9o"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -280,15 +281,61 @@
                     </view>
                     <connections>
                         <outlet property="flagImage" destination="Owh-VJ-W3c" id="axG-RN-zzF"/>
+                        <outlet property="lifeOne" destination="yTO-LN-TiE" id="XPu-sl-j6r"/>
+                        <outlet property="lifeThree" destination="TSB-77-wPD" id="7fb-bv-SdH"/>
+                        <outlet property="lifeTwo" destination="Uk6-iI-7oG" id="h9f-Ww-IEl"/>
                         <outlet property="optionFour" destination="YzM-Sn-dPr" id="xru-R4-8CX"/>
                         <outlet property="optionOne" destination="aDT-9k-FLP" id="MlO-FT-a89"/>
                         <outlet property="optionThree" destination="eSg-2M-O0e" id="ryb-Ed-d2I"/>
                         <outlet property="optionTwo" destination="8qu-d6-eRq" id="lwW-WN-5aJ"/>
+                        <outlet property="playersScore" destination="Z8t-Bn-KhL" id="8AW-Rt-qEf"/>
+                        <outlet property="totalNumberQuestions" destination="f8u-yH-WOM" id="nTe-Ym-Q87"/>
+                        <segue destination="Y8m-z4-SNK" kind="show" identifier="showGameOver" id="q0X-I9-T3u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mc1-qZ-yPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="872.46376811594212" y="127.17391304347827"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="QZL-OV-sdu">
+            <objects>
+                <viewController id="Y8m-z4-SNK" customClass="GameOverViewController" customModule="Ultimate_Flag_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wuO-Dt-spP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I66-PV-hkm">
+                                <rect key="frame" x="143" y="449" width="128" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M27-Ua-cmQ">
+                                <rect key="frame" x="87" y="113" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="end" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-oT-xwW">
+                                <rect key="frame" x="87" y="389" width="240" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="mAE-1f-yIL"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultImage" destination="M27-Ua-cmQ" id="EAz-Br-IzO"/>
+                        <outlet property="resultText" destination="zdx-oT-xwW" id="YgR-UG-Api"/>
+                        <outlet property="scoreLabel" destination="I66-PV-hkm" id="YFj-6O-rj8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bc3-CR-eeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1610.144927536232" y="130.43478260869566"/>
         </scene>
     </scenes>
     <resources>

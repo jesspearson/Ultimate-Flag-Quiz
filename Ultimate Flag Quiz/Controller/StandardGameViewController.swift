@@ -13,9 +13,18 @@ import SwiftyJSON
 class StandardGameViewController: UIViewController {
 
     var arrayFlagObjects = [Question]()
-    var randomiseFlags : Int = 0
+    var randomiseFlags = 0
     var question = Question()
     var checkedAnswer = ""
+    var score = 0
+    var lives = 3
+    
+    @IBOutlet weak var playersScore: UITextField!    
+    @IBOutlet weak var totalNumberQuestions: UITextField!
+    
+    @IBOutlet weak var lifeOne: UITextField!
+    @IBOutlet weak var lifeTwo: UITextField!
+    @IBOutlet weak var lifeThree: UITextField!
     
     @IBOutlet weak var flagImage: UIImageView!
     
@@ -33,7 +42,9 @@ class StandardGameViewController: UIViewController {
         if checkedAnswer == "Correct" {
             UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.green},
                            completion: { _ in UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.black})
-            })
+                            })
+            playersScore.text = String(score)
+            
             //gets next question object and displays it
             shuffleArray()
             question = getQuestion(randomiseInt: randomiseFlags)
@@ -41,13 +52,22 @@ class StandardGameViewController: UIViewController {
         else  {
             UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.red},
                            completion: { _ in UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.black})
-            })
+                            })
+            //hide lives
+            switch lives {
+            case 3:  lifeOne.isHidden = true ; //record incorrect result in var
+            case 2: lifeTwo.isHidden = true ; //record incorrect result in var
+            case 1: lifeThree.isHidden = true ; //record incorrect result in var
+            case 0: performSegue(withIdentifier: "showGameOver", sender: self)
+            default: print("Game Over")
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         parseJSON()
+        totalNumberQuestions.text = String(arrayFlagObjects.count)
         shuffleArray()
         question = getQuestion(randomiseInt: randomiseFlags)
         // Do any additional setup after loading the view.
@@ -107,9 +127,14 @@ class StandardGameViewController: UIViewController {
     }
     
     // MARK - shuffle array or does swift already have a method I can use for this?
-    //This method will count the completed array and then select a random number from the array which can be used to pick out a random set of flag data
+    //This method will count the completed array and then select a random number from the array which can be used to pick out a random set of flag data, or if the array is empty then end the game
     func shuffleArray() {
+        if !arrayFlagObjects.isEmpty {
         randomiseFlags = Int(arc4random_uniform(UInt32(arrayFlagObjects.count)))
+        }
+        else if arrayFlagObjects.isEmpty {
+            performSegue(withIdentifier: "showGameOver", sender: self)
+        }
     }
     
     func getQuestion(randomiseInt : Int) -> Question {
@@ -126,6 +151,9 @@ class StandardGameViewController: UIViewController {
             updateUI(answerOptions: randomQuestion.options, correctAnswer: randomQuestion.answer, flagImagePath: randomQuestion.flagImage)
             
         }
+        
+        
+        
         print(arrayFlagObjects.count)
         return randomQuestion
     }
@@ -169,17 +197,23 @@ class StandardGameViewController: UIViewController {
         if answer == correctAnswer {
             print("you got it right")
             checkedAnswer = "Correct"
-            
-            
-            // also need to add a counter at some point to keep track of score
-           
+            score += 1
         } else {
-            
-            // if I want to have 3 lives then this would also need to remove a "life"
             print("Wrong")
             checkedAnswer = "Incorrect"
+            lives -= 1
         }
         return checkedAnswer
+    }
+    
+    //segue to show game over screen. Passes through the finalScore var to be displayed on the gameOver screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showGameOver" {
+            
+            let destinationVC = segue.destination as! GameOverViewController
+            destinationVC.finalScore = String(score)
+            destinationVC.lives = lives
+        }
     }
     
     

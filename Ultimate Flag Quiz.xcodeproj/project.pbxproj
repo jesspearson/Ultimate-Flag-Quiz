@@ -13,6 +13,7 @@
 		943C98732220358400E08868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943C98722220358400E08868 /* Assets.xcassets */; };
 		943C98762220358400E08868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943C98742220358400E08868 /* LaunchScreen.storyboard */; };
 		943C98832222E2B300E08868 /* StandardGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943C98822222E2B300E08868 /* StandardGameViewController.swift */; };
+		94678B16224AB10B002D25EE /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94678B15224AB10B002D25EE /* GameOverViewController.swift */; };
 		947894CB2225C30D00181AE2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947894CA2225C30D00181AE2 /* Question.swift */; };
 		947894CF2225CBC500181AE2 /* testJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 947894CE2225CBC500181AE2 /* testJson.json */; };
 		E55AC0345D5E333CA8DAC40C /* Pods_Ultimate_Flag_Quiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5A16925570D0E716900839 /* Pods_Ultimate_Flag_Quiz.framework */; };
@@ -30,6 +31,7 @@
 		943C98752220358400E08868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		943C98772220358400E08868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		943C98822222E2B300E08868 /* StandardGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardGameViewController.swift; sourceTree = "<group>"; };
+		94678B15224AB10B002D25EE /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		947894CA2225C30D00181AE2 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		947894CE2225CBC500181AE2 /* testJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testJson.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 		943C988122203FA000E08868 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				94678B15224AB10B002D25EE /* GameOverViewController.swift */,
 				943C986B2220358200E08868 /* AppDelegate.swift */,
 				943C986D2220358200E08868 /* LaunchScreenViewController.swift */,
 				943C98822222E2B300E08868 /* StandardGameViewController.swift */,
@@ -240,6 +243,7 @@
 				947894CB2225C30D00181AE2 /* Question.swift in Sources */,
 				943C986C2220358200E08868 /* AppDelegate.swift in Sources */,
 				943C98832222E2B300E08868 /* StandardGameViewController.swift in Sources */,
+				94678B16224AB10B002D25EE /* GameOverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
