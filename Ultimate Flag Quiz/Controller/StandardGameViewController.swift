@@ -15,6 +15,7 @@ class StandardGameViewController: UIViewController {
     var arrayFlagObjects = [Question]()
     var randomiseFlags = 0
     var question = Question()
+    var totalQuestions : Int?
     var checkedAnswer = ""
     var score = 0
     var lives = 3
@@ -41,7 +42,7 @@ class StandardGameViewController: UIViewController {
         checkedAnswer = answerPressed(playerAnswer: answer!, correctAnswer: question)
         if checkedAnswer == "Correct" {
             UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.green},
-                           completion: { _ in UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.black})
+                           completion: { _ in UIView.animate(withDuration: 0.4, animations: {sender.backgroundColor = UIColor.black})
                             })
             playersScore.text = String(score)
             
@@ -55,9 +56,10 @@ class StandardGameViewController: UIViewController {
                             })
             //hide lives
             switch lives {
-            case 3:  lifeOne.isHidden = true ; //record incorrect result in var
+            case 3:  lifeOne.isHidden = true ;//record incorrect result in var
             case 2: lifeTwo.isHidden = true ; //record incorrect result in var
             case 1: lifeThree.isHidden = true ; //record incorrect result in var
+            //when player has no more lives launch game over VC
             case 0: performSegue(withIdentifier: "showGameOver", sender: self)
             default: print("Game Over")
             }
@@ -67,10 +69,11 @@ class StandardGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         parseJSON()
-        totalNumberQuestions.text = String(arrayFlagObjects.count)
+        totalQuestions = arrayFlagObjects.count
+        totalNumberQuestions.text = String(totalQuestions!)
         shuffleArray()
         question = getQuestion(randomiseInt: randomiseFlags)
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,9 +132,11 @@ class StandardGameViewController: UIViewController {
     // MARK - shuffle array or does swift already have a method I can use for this?
     //This method will count the completed array and then select a random number from the array which can be used to pick out a random set of flag data, or if the array is empty then end the game
     func shuffleArray() {
+        //if the array isn't empty count how many objects it has and pick a random number between 0 and this number, store it in randomiseFlag var
         if !arrayFlagObjects.isEmpty {
         randomiseFlags = Int(arc4random_uniform(UInt32(arrayFlagObjects.count)))
         }
+        //if the array is now empty the player has finished the game, launch the game over VC
         else if arrayFlagObjects.isEmpty {
             performSegue(withIdentifier: "showGameOver", sender: self)
         }
@@ -143,18 +148,21 @@ class StandardGameViewController: UIViewController {
         //get question using if e.g if array not empty then {get a random array element and display updat the UI} else end of the game
         if !arrayFlagObjects.isEmpty {
             
-            //get random array element & store in local var and remove from overall arrayFlagObjcts array
+            //get random array object & store in local question var and remove from overall arrayFlagObjcts array
             randomQuestion = arrayFlagObjects.remove(at: randomiseInt)
             
             
             //update images, question buttons with that arrays data
-            updateUI(answerOptions: randomQuestion.options, correctAnswer: randomQuestion.answer, flagImagePath: randomQuestion.flagImage)
-            
+            //if it's the first question being shown then there will be no delay in the animation
+            if arrayFlagObjects.count == totalQuestions!-1 {
+                updateUI(answerOptions: randomQuestion.options, correctAnswer: randomQuestion.answer, flagImagePath: randomQuestion.flagImage)
+            } else {
+                //otherwise apply a 1 second delay when updating the flag and button text
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.updateUI(answerOptions: randomQuestion.options, correctAnswer: randomQuestion.answer, flagImagePath: randomQuestion.flagImage)
+                }
+            }
         }
-        
-        
-        
-        print(arrayFlagObjects.count)
         return randomQuestion
     }
     
@@ -206,13 +214,14 @@ class StandardGameViewController: UIViewController {
         return checkedAnswer
     }
     
-    //segue to show game over screen. Passes through the finalScore var to be displayed on the gameOver screen
+    //segue to show game over screen. Passes through the finalScore var to be displayed on the gameOver VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGameOver" {
             
             let destinationVC = segue.destination as! GameOverViewController
             destinationVC.finalScore = String(score)
             destinationVC.lives = lives
+            destinationVC.totalQuestions = String(totalQuestions!)
         }
     }
     

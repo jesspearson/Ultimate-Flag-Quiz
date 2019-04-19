@@ -11,28 +11,40 @@ import UIKit
 class GameOverViewController: UIViewController {
 
     
+    
     @IBOutlet weak var resultImage: UIImageView!
+    
     @IBOutlet weak var resultText: UITextView!
-    @IBOutlet weak var scoreLabel: UILabel!
     
     
     var finalScore : String?
     var lives : Int?
+    var totalQuestions : String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        scoreLabel.text = finalScore
+
         if lives! > 0 {
-            resultImage.image = #imageLiteral(resourceName: "winner")
-            resultText.text = "You Win 🏁"
+            resultImage.image = #imageLiteral(resourceName: "trophy")
+            resultText.text = "Final Score: \(finalScore!)/\(totalQuestions!)"
         }
         else {
-            resultImage.image = #imageLiteral(resourceName: "sadface")
-            resultText.text = "You Lost 🏴‍☠️"
+            resultImage.image = #imageLiteral(resourceName: "game-over")
+            resultText.text = "Final Score: \(finalScore!)/\(totalQuestions!)"
         }
     }
+    
+    @IBAction func playAgainPressed(_ sender: Any) {
+        performSegue(withIdentifier: "playAgain", sender: self)
+    }
+    
+    @IBAction func mainMenuPressed(_ sender: Any) {
+        performSegue(withIdentifier: "returnToMainMenu", sender: self)
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
