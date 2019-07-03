@@ -16,6 +16,7 @@
 		94678B16224AB10B002D25EE /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94678B15224AB10B002D25EE /* GameOverViewController.swift */; };
 		947894CB2225C30D00181AE2 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947894CA2225C30D00181AE2 /* Question.swift */; };
 		947894CF2225CBC500181AE2 /* testJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 947894CE2225CBC500181AE2 /* testJson.json */; };
+		94BEA29322721CFE00D6C2A8 /* flag_full.json in Resources */ = {isa = PBXBuildFile; fileRef = 94BEA29222721CFE00D6C2A8 /* flag_full.json */; };
 		E55AC0345D5E333CA8DAC40C /* Pods_Ultimate_Flag_Quiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5A16925570D0E716900839 /* Pods_Ultimate_Flag_Quiz.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		94678B15224AB10B002D25EE /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		947894CA2225C30D00181AE2 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		947894CE2225CBC500181AE2 /* testJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testJson.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
+		94BEA29222721CFE00D6C2A8 /* flag_full.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flag_full.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				947894CA2225C30D00181AE2 /* Question.swift */,
 				947894CE2225CBC500181AE2 /* testJson.json */,
+				94BEA29222721CFE00D6C2A8 /* flag_full.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94BEA29322721CFE00D6C2A8 /* flag_full.json in Resources */,
 				943C98762220358400E08868 /* LaunchScreen.storyboard in Resources */,
 				943C98732220358400E08868 /* Assets.xcassets in Resources */,
 				947894CF2225CBC500181AE2 /* testJson.json in Resources */,

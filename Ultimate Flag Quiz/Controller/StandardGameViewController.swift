@@ -55,6 +55,7 @@ class StandardGameViewController: UIViewController {
                            completion: { _ in UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.black})
                             })
             //hide lives
+            //can I move this switch statement into a separate func?? and then just call it here instead?
             switch lives {
             case 3:  lifeOne.isHidden = true ;//record incorrect result in var
             case 2: lifeTwo.isHidden = true ; //record incorrect result in var
@@ -84,7 +85,7 @@ class StandardGameViewController: UIViewController {
     // MARK - JSON Parsing
     func parseJSON() {
         
-        if let path = Bundle.main.path(forResource: "testJson", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "flag_full", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let jsonObj = try JSON(data: data)
@@ -145,7 +146,7 @@ class StandardGameViewController: UIViewController {
     func getQuestion(randomiseInt : Int) -> Question {
         var randomQuestion = Question()
         
-        //get question using if e.g if array not empty then {get a random array element and display updat the UI} else end of the game
+        //get question using if e.g if array not empty then {get a random array element and display update the UI} else end of the game
         if !arrayFlagObjects.isEmpty {
             
             //get random array object & store in local question var and remove from overall arrayFlagObjcts array
