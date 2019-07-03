@@ -54,16 +54,8 @@ class StandardGameViewController: UIViewController {
             UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.red},
                            completion: { _ in UIView.animate(withDuration: 0.6, animations: {sender.backgroundColor = UIColor.black})
                             })
-            //hide lives
-            //can I move this switch statement into a separate func?? and then just call it here instead?
-            switch lives {
-            case 3:  lifeOne.isHidden = true ;//record incorrect result in var
-            case 2: lifeTwo.isHidden = true ; //record incorrect result in var
-            case 1: lifeThree.isHidden = true ; //record incorrect result in var
-            //when player has no more lives launch game over VC
-            case 0: performSegue(withIdentifier: "showGameOver", sender: self)
-            default: print("Game Over")
-            }
+            //call check lives func to see if user has any remaining lives and removes a life if answer is incorrect
+            checkLives()
         }
     }
     
@@ -192,6 +184,17 @@ class StandardGameViewController: UIViewController {
         optionThree.setTitle(thirdOption, for: .normal)
         optionFour.setTitle(fourthOption, for: .normal)
         
+    }
+    
+    func checkLives () {
+        switch lives {
+        case 3:  lifeOne.isHidden = true ;//record incorrect result in var
+        case 2: lifeTwo.isHidden = true ; //record incorrect result in var
+        case 1: lifeThree.isHidden = true ; //record incorrect result in var
+        //when player has no more lives launch game over VC
+        case 0: performSegue(withIdentifier: "showGameOver", sender: self)
+        default: print("Game Over")
+        }
     }
     
     
